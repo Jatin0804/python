@@ -204,7 +204,7 @@ my_ll.print_list()
 middle_node = my_ll.find_middle_node()
 print("\nThe middle node of the list is :", middle_node.value)
 
-kth_node = my_ll.find_kth_from_end(6)
+kth_node = my_ll.find_kth_from_end(4)
 print("\nThe kth node from last of list is :", kth_node.value)
 
 kth_node = my_ll.find_kth_from_end(2)

@@ -50,3 +50,9 @@
 - git add .
 - git status
 - git commit -m "Changes in Branch"
+- git checkout main
+- touch chapter4.txt
+- code chapter4.txt
+- git add .
+- git commit -m "Changes in main "
+- git merge new-plot

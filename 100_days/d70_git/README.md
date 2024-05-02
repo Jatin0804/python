@@ -23,7 +23,7 @@
 - git log = to check all the commits and actions performed
 
 ###
-- git remote add origin https://github.com/Jatin0804/learn_github.git = to add the folder to remote github
+- git remote add origin https://github.com/Jatin0804/python.git = to add the folder to remote github
 - git branch -M main = to change the branch to main
 - git push -u origin main = to upload the local repository to remote and update the main branch
 

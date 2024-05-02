@@ -41,14 +41,12 @@
 - git commit -m "Added .gitignore"
 
 ###
+- git clone <>link<> = to clone a whole repository
+
+###
 - git branch new-plot = to create a new branch other than main
 - git branch =  to check all the branches available
 - git checkout new-plot = to switch to any other branch (new-plot)
 - git add .
 - git status
 - git commit -m "Changes in Branch"
-- git checkout main
-- touch chapter4.txt
-- code chapter4.txt
-- git add .
-- git commit -m "Changes in main "

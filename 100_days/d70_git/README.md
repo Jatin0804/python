@@ -56,3 +56,4 @@
 - git add .
 - git commit -m "Changes in main "
 - git merge new-plot
+- git push origin main -u

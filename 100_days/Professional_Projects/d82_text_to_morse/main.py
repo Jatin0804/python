@@ -1,4 +1,4 @@
-from text_to_morse import *
+from text_to_morse_data import *
 
 def main():
     programme_active = True

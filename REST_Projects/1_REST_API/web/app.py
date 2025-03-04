@@ -1,8 +1,28 @@
 from flask import Flask, jsonify, request
 from flask_restful import Api, Resource
+from pymongo import MongoClient
 
 app = Flask(__name__)
 api = Api(app)
+
+client = MongoClient("mongodb://db:27017")
+db = client["RESTAPI"] 
+
+UserNum = db["UserNum"]
+UserNum.insert_one({
+    'num_of_users': 1
+})
+
+class Visit(Resource):
+    def get(self):
+        prev = UserNum.find_one({})[0]['num_of_users']
+        new = prev + 1
+        UserNum.update_many({}, {
+            "$set": {
+                'num_of_users': new
+            }
+        })
+        return str("Hello user " + str(new))        
 
 def checkData(postedData, functionName):
     if ('x' not in postedData or 'y' not in postedData):
@@ -72,10 +92,11 @@ api.add_resource(Add, "/add")
 api.add_resource(Subtract, "/subtract")
 api.add_resource(Multiply, "/multiply")
 api.add_resource(Divide, "/divide")
+api.add_resource(Visit, "/visits")
 
 @app.route('/')
 def calulator():
     return "REST API based calculator"
 
 if __name__ == "__main__":
-    app.run(debug = True)
+    app.run(host = "0.0.0.0", debug = True)
